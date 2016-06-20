@@ -1,0 +1,41 @@
+﻿@model BookHotelMVC.ViewModels.AdminViewModel
+
+@{
+    ViewBag.Title = "Admin";
+}
+
+<h2>Paid Bookings</h2>
+
+@foreach (var b in Model.PaidBookings)
+{
+    <div>
+        <span>RoomId @b.RoomId : @b.BookFrom.ToShortDateString()-  @b.BookTo.ToShortDateString(). Paid: @b.Paid</span>
+    </div>
+}
+<h2>Unpaid Bookings</h2>
+
+@foreach (var b in Model.UnpaidBookings)
+{
+    <div>
+        <span class="bookingId" hidden>@b.Id</span>
+        <span>RoomId @b.RoomId : @b.BookFrom.ToShortDateString() -  @b.BookTo.ToShortDateString(). Paid: @b.Paid</span>
+        <input type="button" value="Got Payment" class="getPaid" />
+    </div>
+}
+<script>
+
+    $('.getPaid').click(function () {
+        var obj = $(this).prevAll(".bookingId:first").text();
+        console.log(obj);
+        $.ajax({
+            url: "/Home/GetPayment/"+obj,
+            type: "Post",
+            data: obj,
+            contentType: "application/json",
+            success: function () {
+                location.reload();
+            }
+        })
+    });
+
+</script>

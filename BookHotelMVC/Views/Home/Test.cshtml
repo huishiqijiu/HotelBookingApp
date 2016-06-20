@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "Test";
+}
+<style>
+    /*table{
+        border: 1px solid black;
+        font-family: Arial;
+    }
+    tr:nth-child(odd){
+        background-color: red;
+    }
+    tr td:nth-of-type(even){
+         background-color: blue;
+    }*/
+</style>
+<h2>Test</h2>
+
+int 1: <input type="text" id="int1"/>
+int 2: <input type="text" id="int2" />
+<input type="button" name="add" value="Add" onclick="add()"/>
+<input type="button" name="divide" value="Divide" onclick="divide()" />
+<p id="test">test</p>
+<table>
+    @*<tr>
+        <th>Fruit</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>*@
+    <tr>
+        <td>apple2</td>
+        <td>22</td>
+        <td>21.3</td>
+    </tr>
+    <tr>
+        <td>apple</td>
+        <td>
+            <input type="text"/>
+        </td>
+        <td>fewwaw</td>
+    </tr>
+    
+    <tr>
+        <td>apple3</td>
+        <td>
+            <input type="text" />
+        </td>
+        <td>ewrw3efgtr</td>
+    </tr>
+</table>
+
+<button onclick="alert(start());">start</button>
+
+
+<script>
+    $(document).ready(function () {
+        $('table td: eq(2) input').focus(
+            function () {
+                $(this).parent().next().css("background-color", "#00FF00");
+            });
+        $('table td: eq(2) input').blur(
+            function () {
+                $(this).parent().next().css("background-color", "#FFFFFF");
+            });
+    });
+    function start() {
+        var counter = 10;
+        var fun = function () {
+            counter = 20;
+            console.log("Come in pls");
+        }
+        return counter;
+    }
+
+
+
+    onerror = unhandled;
+    function unhandled(msg, url, line) {
+        alert("unhandled");
+    }
+    function add() {
+        alert(parseInt($('#int1').val()) + parseInt($('#int2').val()));
+    }
+    function devide() {
+        if (isNaN($('#int1').val()) || isNaN($('#int2').val())) {
+            throw ('not a number');
+        }
+        alert($('#int1').val() / $('#int2').val());
+    }
+    document.getElementById("test").style.border = "0";
+    //document.getElementById("test").style.position = "static";
+    //document.getElementById("test").style.padding = "15px";
+    //document.getElementById("test").style.top = "5px";
+</script>

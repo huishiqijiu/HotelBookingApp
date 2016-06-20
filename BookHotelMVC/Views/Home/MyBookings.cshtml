@@ -1,0 +1,41 @@
+﻿@model BookHotelMVC.ViewModels.MyBookingsViewModel
+
+@{
+    ViewBag.Title = "MyBookings";
+}
+
+<h2>MyBookings</h2>
+@foreach (var b in Model.UnDeletableBookings)
+{
+    <div>
+       
+        <span>@b.BookFrom.ToShortDateString() - @b.BookTo.ToShortDateString(): Room for @b.NumberOfBeds , Paid: @b.Paid</span>
+       
+    </div>
+}
+
+@foreach (var b in Model.DeletableBookings)
+{
+    <div>
+        <span class="bookingId" hidden>@b.Id</span>
+        <span>@b.BookFrom.ToShortDateString() - @b.BookTo.ToShortDateString(): Room for @b.NumberOfBeds Paid: @b.Paid</span>
+        <input type="button" value="Delete" />
+    </div>
+}
+<script>
+
+    $('input').click(function () {
+        var obj = $(this).prevAll(".bookingId:first").text();
+        console.log(obj);
+        $.ajax({
+            url: "/Home/DeleteBooking/"+obj,
+            type: "Post",
+            data: obj,
+            contentType: "application/json",
+            success: function () {
+                location.reload();
+            }
+        })
+    });
+
+</script>

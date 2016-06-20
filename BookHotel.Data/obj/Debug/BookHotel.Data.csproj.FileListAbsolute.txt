@@ -1,0 +1,10 @@
+C:\Users\Hui\Documents\Visual Studio 2015\Projects\InlämningsUppgifter\BookHotelMVC\BookHotel.Data\bin\Debug\BookHotel.Data.dll.config
+C:\Users\Hui\Documents\Visual Studio 2015\Projects\InlämningsUppgifter\BookHotelMVC\BookHotel.Data\bin\Debug\BookHotel.Data.dll
+C:\Users\Hui\Documents\Visual Studio 2015\Projects\InlämningsUppgifter\BookHotelMVC\BookHotel.Data\bin\Debug\BookHotel.Data.pdb
+C:\Users\Hui\Documents\Visual Studio 2015\Projects\InlämningsUppgifter\BookHotelMVC\BookHotel.Data\bin\Debug\EntityFramework.dll
+C:\Users\Hui\Documents\Visual Studio 2015\Projects\InlämningsUppgifter\BookHotelMVC\BookHotel.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Hui\Documents\Visual Studio 2015\Projects\InlämningsUppgifter\BookHotelMVC\BookHotel.Data\bin\Debug\EntityFramework.xml
+C:\Users\Hui\Documents\Visual Studio 2015\Projects\InlämningsUppgifter\BookHotelMVC\BookHotel.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Hui\Documents\Visual Studio 2015\Projects\InlämningsUppgifter\BookHotelMVC\BookHotel.Data\obj\Debug\BookHotel.Data.csprojResolveAssemblyReference.cache
+C:\Users\Hui\Documents\Visual Studio 2015\Projects\InlämningsUppgifter\BookHotelMVC\BookHotel.Data\obj\Debug\BookHotel.Data.dll
+C:\Users\Hui\Documents\Visual Studio 2015\Projects\InlämningsUppgifter\BookHotelMVC\BookHotel.Data\obj\Debug\BookHotel.Data.pdb

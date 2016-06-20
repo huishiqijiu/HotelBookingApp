@@ -1,0 +1,49 @@
+﻿@model BookHotelMVC.ViewModels.LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.LabelFor(model => model.Mail, new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.TextBoxFor(model => model.Mail, new { @class = "form form-control autowidth" })
+                @Html.ValidationMessageFor(model => model.Mail)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.TextBoxFor(model => model.Password, new { @class = "form form-control autowidth", type = "password" })
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-4"></div>
+            <input type="submit" value="Logga in" class="btn col-md-8" style="margin-left:15px" />
+        </div>
+        <br /><br />
+        <div class="form-group">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+                @Html.ActionLink("Registration", "Register", "Account")<br />
+
+                @*@Html.ActionLink("Forget password?", "LostPassword", "Account")*@
+            </div>
+            <div class="col-md-4">
+
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+    </div>
+}

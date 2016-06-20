@@ -1,0 +1,49 @@
+﻿@model BookHotel.Services.Model.BookingModel
+
+@{
+    ViewBag.Title = "Booking";
+}
+
+<h2>Booking</h2>
+
+@using (Html.BeginForm("Booking", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Make a new booking</h4>
+    <hr />
+
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    @Html.HiddenFor(m => m.UserId)
+    <div class="form-group">
+        @Html.LabelFor(m => m.BookFrom, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @*<input id="startDate" name="startDate" style="width: 100%;" class="form-control date" value="@Model.BookFrom" />*@
+            @Html.TextBoxFor(model => model.BookFrom, new { @class = "form-control datepicker", placeholder = "Check in on..." })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.BookTo, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @*<input data-provide="datepicker" value="@Model.BookTo">*@
+            @*<input id="endDate" name="endDate" style="width: 100%;" class="form-control date" value="@Model.BookTo" />*@
+            @Html.TextBoxFor(model => model.BookTo, new { @class = "form-control datepicker", placeholder = "Check out on..." })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.NumberOfBeds, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(m => m.NumberOfBeds, new SelectList(new int[] { 1, 2, 3, 4 }))
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Book" />
+        </div>
+    </div>
+}
+<script>
+        $(function () { // will trigger when the document is ready
+            $('.datepicker').datepicker(); //Initialise any date pickers
+        });
+</script>

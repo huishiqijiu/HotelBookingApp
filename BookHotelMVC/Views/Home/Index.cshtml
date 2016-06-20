@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<head>
+    <link href="~/Content/HomeIndex.css" rel="stylesheet" />
+</head>
+<h3>Welcome to Nackademin Hotelbooking System.</h3>
+
+<div class="row">
+    <div class="col-md-4 functions">
+        <i class="fa fa-cogs fa-4x" @*aria-hidden="true"*@></i><br />
+        @Html.ActionLink("Start Booking", "Booking", "Home")
+    </div>
+    <div class="col-md-4 functions">
+        <i class="fa fa-shopping-basket fa-4x" aria-hidden="true"></i><br />
+
+        @Html.ActionLink("Check my Bookings", "MyBookings", "Home")
+    </div>
+    <div class="col-md-4 functions">
+        <i class="fa fa-coffee fa-4x" aria-hidden="true"></i><br />
+
+        @Html.ActionLink("For Administration", "Admin", "Home")
+    </div>
+</div>
